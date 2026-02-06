@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagiskBOOST | Профессиональные услуги Dota 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff4655;
+            --primary-dark: #e63e4c;
+            --secondary: #7a6fff;
+            --dark: #0c1021;
+            --dark-light: #1a1f3a;
+            --accent: #00d8ff;
+            --text: #ffffff;
+            --text-secondary: #b8c1ec;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(122, 111, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 70, 85, 0.05) 0%, transparent 20%);
+            min-height: 100vh;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Oxanium', cursive;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Шапка */
+        header {
+            background-color: rgba(12, 16, 33, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(122, 111, 255, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Oxanium', cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2rem;
+            filter: drop-shadow(0 0 5px var(--primary));
+            animation: pulse 2s infinite;
+        }
+        
+        .logo-text {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Oxanium', cursive;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 70, 85, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 70, 85, 0.4);
+        }
+        
+        /* Главный экран */
+        .hero {
+            padding: 10rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: -1;
+            background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+        
+        /* Калькулятор */
+        .calculator-section {
+            padding: 4rem 0;
+            background: rgba(12, 16, 33, 0.7);
+            border-radius: 20px;
+            margin: 2rem auto;
+            max-width: 900px;
+            border: 1px solid rgba(122, 111, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .calculator-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text);
+            position: relative;
+        }
+        
+        .calculator-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 0 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        .calculator-controls {
+            background: rgba(26, 31, 58, 0.8);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(122, 111, 255, 0.2);
+        }
+        
+        .calculator-results {
+            background: rgba(26, 31, 58, 0.8);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(122, 111, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .range-container {
+            position: relative;
+            padding: 1.5rem 0 0.5rem;
+        }
+        
+        .range-value {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-family: 'Oxanium', cursive;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: rgba(0, 216, 255, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .range-slider {
+            width: 100%;
+            height: 10px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 70, 85, 0.7);
+            border: 3px solid white;
+            transition: all 0.2s;
+        }
+        
+        .range-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 70, 85, 0.9);
+        }
+        
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .service-type-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .service-type-selector {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .service-type-selector {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .service-type {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .service-type:hover {
+            background: rgba(122, 111, 255, 0.1);
+            border-color: rgba(122, 111, 255, 0.3);
+        }
+        
+        .service-type.active {
+            background: rgba(255, 70, 85, 0.15);
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(255, 70, 85, 0.2);
+        }
+        
+        .service-type-icon {
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-type.active .service-type-icon {
+            color: var(--primary);
+        }
+        
+        .service-type-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .price-per-unit {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.3rem;
+        }
+        
+        .results-box {
+            text-align: center;
+        }
+        
+        .total-price {
+            font-family: 'Oxanium', cursive;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 1rem 0;
+            text-shadow: 0 0 20px rgba(0, 216, 255, 0.5);
+            transition: transform 0.3s;
+        }
+        
+        .price-breakdown {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .price-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .price-label {
+            color: var(--text-secondary);
+        }
+        
+        .price-value {
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .final-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .discount-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff9a00, #ff4655);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .time-estimate {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+        
+        .time-value {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        /* Отзывы */
+        .reviews-section {
+            padding: 5rem 0;
+        }
+        
+        .reviews-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .reviews-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .review-card {
+            background: linear-gradient(145deg, rgba(26, 31, 58, 0.8), rgba(12, 16, 33, 0.9));
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(122, 111, 255, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(122, 111, 255, 0.3);
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .review-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+        
+        .review-info {
+            flex: 1;
+        }
+        
+        .review-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+        
+        .review-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .review-rating {
+            color: #ffd700;
+            font-size: 1.2rem;
+        }
+        
+        .review-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .review-service {
+            display: inline-block;
+            background: rgba(122, 111, 255, 0.1);
+            color: var(--secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .review-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 1.5rem 0;
+        }
+        
+        .review-response {
+            background: rgba(0, 216, 255, 0.05);
+            border-left: 3px solid var(--accent);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1rem;
+        }
+        
+        .response-label {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .response-text {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-style: italic;
+        }
+        
+        /* Сетка услуг */
+        .services {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: linear-gradient(145deg, rgba(26, 31, 58, 0.8), rgba(12, 16, 33, 0.9));
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s;
+            border: 1px solid rgba(122, 111, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(122, 111, 255, 0.3);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--dark-light), rgba(122, 111, 255, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            color: var(--primary);
+            transition: all 0.4s;
+            position: relative;
+            border: 2px solid rgba(255, 70, 85, 0.2);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, rgba(255, 70, 85, 0.1), rgba(122, 111, 255, 0.2));
+            color: var(--accent);
+            border-color: rgba(0, 216, 255, 0.3);
+        }
+        
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .service-price {
+            font-family: 'Oxanium', cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Футер */
+        footer {
+            background-color: rgba(8, 12, 27, 0.95);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(122, 111, 255, 0.2);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Oxanium', cursive;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .footer-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .footer-heading {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Анимации */
+        @keyframes pulse {
+            0% { filter: drop-shadow(0 0 5px var(--primary)); }
+            50% { filter: drop-shadow(0 0 15px var(--primary)); }
+            100% { filter: drop-shadow(0 0 5px var(--primary)); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .calculator-title {
+                font-size: 2rem;
+            }
+            
+            .total-price {
+                font-size: 3rem;
+            }
+        }
+        
+        /* Пагинация отзывов */
+        .reviews-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+        
+        .page-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(122, 111, 255, 0.2);
+            color: var(--text-secondary);
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .page-btn:hover {
+            background: rgba(122, 111, 255, 0.1);
+            color: var(--text);
+        }
+        
+        .page-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-color: transparent;
+        }
+        
+        .page-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-crown logo-icon"></i>
+                <span class="logo-text">MagiskBOOST</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#calculator">Калькулятор</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            
+            <a href="https://t.me/dltvxxx" target="_blank" class="cta-button">Заказать в Telegram</a>
+        </div>
+    </header>
+
+    <!-- Главный экран -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <h1>
+                <span class="hero-gradient">ПРОФЕССИОНАЛЬНЫЙ БУСТ</span><br>
+                <span class="hero-gradient">DOTA 2</span>
+            </h1>
+            <p class="hero-subtitle">
+                Доверьте свой аккаунт топовым игрокам. Безопасный буст MMR, калибровка, коучинг от легенд Dota 2. 
+                Гарантия результата и анонимности.
+            </p>
+            <a href="#calculator" class="cta-button" style="padding: 1.1rem 2.5rem; font-size: 1.2rem;">
+                <i class="fas fa-calculator"></i> РАССЧИТАТЬ СТОИМОСТЬ
+            </a>
+        </div>
+    </section>
+
+    <!-- Калькулятор -->
+    <section class="calculator-section" id="calculator">
+        <div class="container">
+            <h2 class="calculator-title">КАЛЬКУЛЯТОР СТОИМОСТИ</h2>
+            
+            <div class="calculator-container">
+                <!-- Левая часть - управление -->
+                <div class="calculator-controls">
+                    <div class="form-group">
+                        <label>ВЫБЕРИТЕ УСЛУГУ</label>
+                        <div class="service-type-selector">
+                            <div class="service-type active" id="soloService" data-type="solo" data-price="5" data-unit="MMR">
+                                <div class="service-type-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="service-type-name">Соло MMR</div>
+                                <div class="price-per-unit">5 ₽ / MMR</div>
+                            </div>
+                            
+                            <div class="service-type" id="partyService" data-type="party" data-price="6" data-unit="MMR">
+                                <div class="service-type-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="service-type-name">Парный MMR</div>
+                                <div class="price-per-unit">6 ₽ / MMR</div>
+                            </div>
+                            
+                            <div class="service-type" id="behaviorService" data-type="behavior" data-price="350" data-unit="очков">
+                                <div class="service-type-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="service-type-name">Порядочность</div>
+                                <div class="price-per-unit">350 ₽ / 100 очков</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>КОЛИЧЕСТВО <span id="unitLabel">MMR</span></label>
+                        <div class="range-container">
+                            <div class="range-value" id="amountValue">500 <span id="unitValue">MMR</span></div>
+                            <input type="range" min="100" max="5000" step="100" value="500" class="range-slider" id="amountSlider">
+                            <div class="range-labels">
+                                <span id="minLabel">100 MMR</span>
+                                <span id="midLabel">2500 MMR</span>
+                                <span id="maxLabel">5000 MMR</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>ТЕКУЩИЙ УРОВЕНЬ</label>
+                        <div class="range-container">
+                            <div class="range-value" id="divisionDisplay">Легенда</div>
+                            <input type="range" min="1" max="8" step="1" value="5" class="range-slider" id="divisionSlider">
+                            <div class="range-labels">
+                                <span>Herald</span>
+                                <span>Ancient</span>
+                                <span>Immortal</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>СРОЧНОСТЬ</label>
+                        <div class="range-container">
+                            <div class="range-value" id="urgencyDisplay">Стандарт</div>
+                            <input type="range" min="1" max="3" step="1" value="2" class="range-slider" id="urgencySlider">
+                            <div class="range-labels">
+                                <span>Не срочно</span>
+                                <span>Стандарт</span>
+                                <span>Срочно</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Правая часть - результат -->
+                <div class="calculator-results">
+                    <div class="results-box">
+                        <h3>ИТОГОВАЯ СТОИМОСТЬ</h3>
+                        <div class="total-price" id="totalPrice">2 500 ₽</div>
+                        
+                        <div class="price-breakdown">
+                            <div class="price-item">
+                                <span class="price-label">Базовая стоимость:</span>
+                                <span class="price-value" id="basePrice">2 500 ₽</span>
+                            </div>
+                            
+                            <div class="price-item">
+                                <span class="price-label">Наценка за уровень:</span>
+                                <span class="price-value" id="divisionPrice">+ 0 ₽</span>
+                            </div>
+                            
+                            <div class="price-item">
+                                <span class="price-label">Наценка за срочность:</span>
+                                <span class="price-value" id="urgencyPrice">+ 0 ₽</span>
+                            </div>
+                            
+                            <div class="price-item">
+                                <span class="price-label">Скидка за объем:</span>
+                                <span class="price-value" id="discountPrice">- 0 ₽</span>
+                            </div>
+                            
+                            <div class="price-item final-price">
+                                <span class="price-label">К ОПЛАТЕ:</span>
+                                <span class="price-value" id="finalPrice">2 500 ₽</span>
+                            </div>
+                        </div>
+                        
+                        <div class="time-estimate">
+                            Примерное время выполнения: <span class="time-value" id="timeEstimate">3-5 дней</span>
+                        </div>
+                        
+                        <a href="https://t.me/dltvxxx" target="_blank" class="cta-button" style="margin-top: 2rem; width: 100%; padding: 1.2rem; display: block; text-decoration: none;">
+                            <i class="fab fa-telegram"></i> ЗАКАЗАТЬ В TELEGRAM
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Сетка услуг -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">ВСЕ УСЛУГИ</h2>
+            <div class="services-grid">
+                <div class="service-card" onclick="selectServiceType('solo')">
+                    <div class="service-icon floating">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>БУСТ MMR</h3>
+                    <p>Быстрое и безопасное повышение рейтинга в сольном/парном рейтинге. Любой дивизион.</p>
+                    <div class="service-price">от 5 ₽ / MMR</div>
+                </div>
+                
+                <div class="service-card" onclick="window.open('https://t.me/dltvxxx', '_blank')">
+                    <div class="service-icon floating" style="animation-delay: 0.2s;">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>КОУЧИНГ</h3>
+                    <p>Персональное обучение от топ-игроков. Разбор реплеев, анализ ошибок, практические советы.</p>
+                    <div class="service-price">от 790 ₽ / час</div>
+                </div>
+                
+                <div class="service-card" onclick="window.open('https://t.me/dltvxxx', '_blank')">
+                    <div class="service-icon floating" style="animation-delay: 0.4s;">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>КАЛИБРОВКА</h3>
+                    <p>Максимальный стартовый MMR после калибровки. Играем на победу в каждом матче.</p>
+                    <div class="service-price">от 2 990 ₽</div>
+                </div>
+                
+                <div class="service-card" onclick="selectServiceType('behavior')">
+                    <div class="service-icon floating" style="animation-delay: 0.6s;">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>ПОВЫШЕНИЕ ПОРЯДОЧНОСТИ</h3>
+                    <p>Повышение уровня поведения, разблокировка низкого приоритета, восстановление репутации.</p>
+                    <div class="service-price">350 ₽ / 100 очков</div>
+                </div>
+                
+                <div class="service-card" onclick="window.open('https://t.me/dltvxxx', '_blank')">
+                    <div class="service-icon floating" style="animation-delay: 0.8s;">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>ДОСТИЖЕНИЯ</h3>
+                    <p>Открытие арканы, достижений, трофеев. Получите все, что не успели в игре.</p>
+                    <div class="service-price">от 990 ₽</div>
+                </div>
+                
+                <div class="service-card" onclick="window.open('https://t.me/dltvxxx', '_blank')">
+                    <div class="service-icon floating" style="animation-delay: 1s;">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>АККАУНТЫ</h3>
+                    <p>Готовые аккаунты с высоким MMR, арканами и достижениями. Гарантия безопасности.</p>
+                    <div class="service-price">от 4 990 ₽</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <h2 class="reviews-title">ОТЗЫВЫ КЛИЕНТОВ</h2>
+            <div class="reviews-grid" id="reviewsContainer">
+                <!-- Отзывы будут добавлены через JavaScript -->
+            </div>
+            
+            <!-- Пагинация -->
+            <div class="reviews-pagination" id="pagination">
+                <!-- Кнопки страниц будут добавлены через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">MagiskBOOST</div>
+                    <p class="footer-description">
+                        Профессиональные услуги буста и обучения в Dota 2. 
+                        Работаем с 2018 года, тысячи довольных клиентов.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://t.me/dltvxxx" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="https://discord.com/users/magiskboyong" target="_blank" class="social-icon"><i class="fab fa-discord"></i></a>
+                        <a href="https://vk.com/vvvlgvvv" target="_blank" class="social-icon"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> magiskboy7@gmail.com</li>
+                        <li><i class="fab fa-telegram"></i> @dltvxxx</li>
+                        <li><i class="fas fa-clock"></i> Круглосуточно</li>
+                        <li><i class="fas fa-shield-alt"></i> Безопасно и анонимно</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2023 MagiskBOOST. Все права защищены. Dota 2 является зарегистрированной торговой маркой компании Valve Corporation.
+                Мы не связаны с Valve Corporation. Услуги предоставляются на платной основе.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== ПЕРЕМЕННЫЕ ==========
+        let currentServiceType = 'solo';
+        let currentPricePerUnit = 5;
+        let currentUnit = 'MMR';
+        let currentAmount = 500;
+        let currentDivision = 5;
+        let currentUrgency = 2;
+        
+        // ========== ЭЛЕМЕНТЫ DOM ==========
+        const amountSlider = document.getElementById('amountSlider');
+        const amountValue = document.getElementById('amountValue');
+        const unitLabel = document.getElementById('unitLabel');
+        const unitValue = document.getElementById('unitValue');
+        const minLabel = document.getElementById('minLabel');
+        const midLabel = document.getElementById('midLabel');
+        const maxLabel = document.getElementById('maxLabel');
+        
+        const divisionSlider = document.getElementById('divisionSlider');
+        const divisionDisplay = document.getElementById('divisionDisplay');
+        const urgencySlider = document.getElementById('urgencySlider');
+        const urgencyDisplay = document.getElementById('urgencyDisplay');
+        
+        const serviceTypes = document.querySelectorAll('.service-type');
+        const soloService = document.getElementById('soloService');
+        const partyService = document.getElementById('partyService');
+        const behaviorService = document.getElementById('behaviorService');
+        
+        // Элементы для отображения цен
+        const totalPriceElement = document.getElementById('totalPrice');
+        const basePriceElement = document.getElementById('basePrice');
+        const divisionPriceElement = document.getElementById('divisionPrice');
+        const urgencyPriceElement = document.getElementById('urgencyPrice');
+        const discountPriceElement = document.getElementById('discountPrice');
+        const finalPriceElement = document.getElementById('finalPrice');
+        const timeEstimateElement = document.getElementById('timeEstimate');
+        
+        // ========== КОНФИГУРАЦИЯ ЦЕН ==========
+        const serviceConfigs = {
+            solo: {
+                price: 5,
+                unit: 'MMR',
+                min: 100,
+                max: 5000,
+                step: 100,
+                default: 500
+            },
+            party: {
+                price: 6,
+                unit: 'MMR',
+                min: 100,
+                max: 5000,
+                step: 100,
+                default: 500
+            },
+            behavior: {
+                price: 350, // 350₽ за 100 очков
+                unit: 'очков',
+                min: 100,
+                max: 10000,
+                step: 100,
+                default: 1000 // 1000 очков по умолчанию
+            }
+        };
+        
+        const divisionMultipliers = {
+            1: 0,     // Herald
+            2: 0,     // Guardian
+            3: 5,     // Crusader
+            4: 10,    // Archon
+            5: 15,    // Legend
+            6: 20,    // Ancient
+            7: 25,    // Divine
+            8: 30     // Immortal
+        };
+        
+        const urgencyMultipliers = {
+            1: -10,   // Не срочно (скидка)
+            2: 0,     // Стандарт
+            3: 20     // Срочно
+        };
+        
+        const volumeDiscounts = [
+            { min: 1000, discount: 5 },
+            { min: 2000, discount: 10 },
+            { min: 3000, discount: 15 },
+            { min: 4000, discount: 20 }
+        ];
+        
+        const divisionNames = {
+            1: "Herald",
+            2: "Guardian", 
+            3: "Crusader",
+            4: "Archon",
+            5: "Legend",
+            6: "Ancient",
+            7: "Divine",
+            8: "Immortal"
+        };
+        
+        const urgencyNames = {
+            1: "Не срочно",
+            2: "Стандарт",
+            3: "Срочно"
+        };
+        
+        // ========== ДАННЫЕ ОТЗЫВОВ ==========
+        const reviews = [
+            {
+                id: 1,
+                name: "Александр К.",
+                date: "15.12.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Заказал буст с 2000 до 4000 MMR. Сделали за 4 дня, играли на моих героях, аккаунт в полной безопасности. Очень доволен!",
+                response: "Спасибо за отзыв! Рады, что вы остались довольны результатом. Ждём вас снова!"
+            },
+            {
+                id: 2,
+                name: "Дмитрий В.",
+                date: "10.12.2023",
+                rating: "★★★★★",
+                service: "Коучинг",
+                content: "Взял 5 часов коучинга. Тренер разобрал все мои ошибки, показал как правильно фармить и участвовать в тимфайтах. MMR поднялся на 500 за неделю.",
+                response: "Отличный результат! Продолжайте тренироваться, и будете только прогрессировать."
+            },
+            {
+                id: 3,
+                name: "Иван М.",
+                date: "05.12.2023",
+                rating: "★★★★★",
+                service: "Повышение порядочности",
+                content: "Был в низком приоритете, восстановили порядочность за 2 дня. Теперь могу спокойно играть в рейтинговые игры.",
+                response: "Рады помочь! Теперь играйте аккуратнее и получайте удовольствие от игры."
+            },
+            {
+                id: 4,
+                name: "Сергей П.",
+                date: "01.12.2023",
+                rating: "★★★★★",
+                service: "Калибровка",
+                content: "Калибровал новый аккаунт. Поставили 3800 MMR с первого раза! Отличный результат за разумные деньги.",
+                response: "Отличный старт! Теперь можно кайфовать от игры с высоким рейтингом."
+            },
+            {
+                id: 5,
+                name: "Максим Л.",
+                date: "28.11.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Соло буст с 3500 до 4500. Играли ночью, чтобы никто не заметил. Всё прошло гладко, результат превзошел ожидания.",
+                response: "Спасибо! Мы всегда стараемся работать максимально незаметно для ваших друзей."
+            },
+            {
+                id: 6,
+                name: "Артём С.",
+                date: "25.11.2023",
+                rating: "★★★★★",
+                service: "Достижения",
+                content: "Заказал открытие арканы на Techies. Сделали быстро, аккаунт даже не заходил в лоу приоритет. Супер!",
+                response: "Поздравляем с новой арканой! Наслаждайтесь игрой."
+            },
+            {
+                id: 7,
+                name: "Павел Г.",
+                date: "20.11.2023",
+                rating: "★★★★★",
+                service: "Аккаунты",
+                content: "Купил аккаунт с 5500 MMR. Всё чисто, нет подозрительной активности, привязал свой стим. Отличный вариант для тех, кто хочет играть на высоком уровне.",
+                response: "Рады, что аккаунт подошёл! Удачи в игре на высоком рейтинге."
+            },
+            {
+                id: 8,
+                name: "Никита Р.",
+                date: "15.11.2023",
+                rating: "★★★★★",
+                service: "Коучинг",
+                content: "Тренер научил правильно распределять ресурсы на карте. Теперь не теряюсь в мид-лейте. MMR пошёл вверх.",
+                response: "Отличный прогресс! Продолжайте в том же духе."
+            },
+            {
+                id: 9,
+                name: "Владимир К.",
+                date: "10.11.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Парный буст с другом. Подняли нас обоих с 3000 до 4000. Играли вдвоём с бустером, было очень эффективно.",
+                response: "Командная работа - это сила! Рады, что смогли помочь вам обоим."
+            },
+            {
+                id: 10,
+                name: "Евгений М.",
+                date: "05.11.2023",
+                rating: "★★★★★",
+                service: "Повышение порядочности",
+                content: "После нескольких репортов упала порядочность. Восстановили за 3 дня, теперь снова могу общаться в чате.",
+                response: "Важно сохранять спокойствие в играх. Удачи в следующих матчах!"
+            },
+            {
+                id: 11,
+                name: "Андрей З.",
+                date: "01.11.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Срочный буст за 2 дня на 1000 MMR. Цена была выше, но скорость того стоила. Всё сделали в срок.",
+                response: "Спасибо за доверие! Мы ценим клиентов, которые выбирают срочные заказы."
+            },
+            {
+                id: 12,
+                name: "Константин П.",
+                date: "28.10.2023",
+                rating: "★★★★★",
+                service: "Калибровка",
+                content: "Калибровка после года перерыва. Получил 3500 MMR, хотя думал будет максимум 3000. Очень приятно удивлён.",
+                response: "Отличный результат после перерыва! Добро пожаловать обратно в Dota."
+            },
+            {
+                id: 13,
+                name: "Роман Ш.",
+                date: "25.10.2023",
+                rating: "★★★★★",
+                service: "Достижения",
+                content: "Хотел получить все достижения сезона. Сделали всё за неделю, даже самые сложные. Теперь у меня полная коллекция.",
+                response: "Поздравляем с завершением коллекции! Отличный результат."
+            },
+            {
+                id: 14,
+                name: "Станислав Б.",
+                date: "20.10.2023",
+                rating: "★★★★★",
+                service: "Коучинг",
+                content: "10 часов коучинга изменили мой подход к игре. Теперь анализирую матчи перед игрой, планирую итембилд. MMR +800.",
+                response: "Вот это прогресс! Продолжайте работать над своими навыками."
+            },
+            {
+                id: 15,
+                name: "Тимур А.",
+                date: "15.10.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Заказал буст на 2000 MMR. Скидка за объём порадовала. Сделали за 8 дней, постоянно присылали скриншоты прогресса.",
+                response: "Спасибо за выбор нашего сервиса! Рады, что вы оценили нашу систему отчётности."
+            },
+            {
+                id: 16,
+                name: "Георгий В.",
+                date: "10.10.2023",
+                rating: "★★★★★",
+                service: "Повышение порядочности",
+                content: "Попал в лоу приоритет из-за дисконнектов. Восстановили порядочность, теперь снова могу играть в рейтинг.",
+                response: "Технические проблемы случаются. Главное - теперь всё работает!"
+            },
+            {
+                id: 17,
+                name: "Борис Л.",
+                date: "05.10.2023",
+                rating: "★★★★★",
+                service: "Аккаунты",
+                content: "Приобрёл аккаунт с коллекцией аркан. Всё легально, аккаунт не банился. Отличная покупка для коллекционера.",
+                response: "Рады, что коллекция аркан вас порадовала! Приятной игры."
+            },
+            {
+                id: 18,
+                name: "Виктор С.",
+                date: "01.10.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Иммортал буст с 5500 до 6000. Очень сложный дивизион, но справились. Профессионалы высшего класса.",
+                response: "Спасибо за высокую оценку! Иммортал дивизион действительно требует особого подхода."
+            },
+            {
+                id: 19,
+                name: "Ярослав К.",
+                date: "28.09.2023",
+                rating: "★★★★★",
+                service: "Коучинг",
+                content: "Тренер помог улучшить микроконтроль на миксе. Теперь выживаю в сложных ситуациях, лучше управляю иллюзиями.",
+                response: "Микроконтроль - ключевой навык для микса. Продолжайте тренировки!"
+            },
+            {
+                id: 20,
+                name: "Михаил П.",
+                date: "25.09.2023",
+                rating: "★★★★★",
+                service: "Калибровка",
+                content: "Новый аккаунт, калибровка на максимум. Получил 4200 MMR. Мечта сбылась - высокий рейтинг с самого начала.",
+                response: "Отличный старт! Теперь главное - не опускать планку."
+            },
+            {
+                id: 21,
+                name: "Олег М.",
+                date: "20.09.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Парный буст с женой. Подняли нас обоих с 2000 до 3000. Теперь можем играть вместе в более интересных играх.",
+                response: "Здорово, что играете вместе! Удачи вам в дальнейших играх."
+            },
+            {
+                id: 22,
+                name: "Семён Д.",
+                date: "15.09.2023",
+                rating: "★★★★★",
+                service: "Достижения",
+                content: "Хотел трофей за 1000 побед. Сделали быстрее, чем я ожидал. Очень качественная работа.",
+                response: "1000 побед - это серьёзное достижение! Поздравляем."
+            },
+            {
+                id: 23,
+                name: "Фёдор Г.",
+                date: "10.09.2023",
+                rating: "★★★★★",
+                service: "Повышение порядочности",
+                content: "После тильт стрима порядочность улетела в ноль. Восстановили за 4 дня. Ребята - волшебники!",
+                response: "Тильт - главный враг порядочности. Старайтесь сохранять спокойствие."
+            },
+            {
+                id: 24,
+                name: "Арсений В.",
+                date: "05.09.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Буст с 4000 до 5000. Играли в непиковое время, друзья ничего не заметили. Дискретность на высоте.",
+                response: "Конфиденциальность - наш приоритет. Спасибо за отзыв!"
+            },
+            {
+                id: 25,
+                name: "Даниил С.",
+                date: "01.09.2023",
+                rating: "★★★★★",
+                service: "Коучинг",
+                content: "Улучшил вардинг и позиционирование. Теперь меньше умираю, больше помогаю команде. MMR пошёл в рост.",
+                response: "Вардинг - основа победы. Отличный прогресс!"
+            },
+            {
+                id: 26,
+                name: "Егор К.",
+                date: "28.08.2023",
+                rating: "★★★★★",
+                service: "Аккаунты",
+                content: "Купил аккаунт с рангом Divine. Всё прозрачно, аккаунт чистый. Месяц играю - никаких проблем.",
+                response: "Рады, что аккаунт полностью вас устраивает!"
+            },
+            {
+                id: 27,
+                name: "Кирилл М.",
+                date: "25.08.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Соло буст на 1500 MMR. Цена адекватная, сроки соблюдены. Буду рекомендовать друзьям.",
+                response: "Спасибо за рекомендации! Будем рады помочь вашим друзьям."
+            },
+            {
+                id: 28,
+                name: "Леонид П.",
+                date: "20.08.2023",
+                rating: "★★★★★",
+                service: "Калибровка",
+                content: "Вернулся в доту после 2 лет перерыва. Калибровка показала 3200 - отличный результат для начала.",
+                response: "Добро пожаловать обратно в игру! Удачи в новых матчах."
+            },
+            {
+                id: 29,
+                name: "Матвей Л.",
+                date: "15.08.2023",
+                rating: "★★★★★",
+                service: "Повышение порядочности",
+                content: "Из-за работы играл с перерывами, получал абандон. Восстановили порядочность, теперь могу играть нормально.",
+                response: "Рады, что смогли помочь совмещать работу и игру!"
+            },
+            {
+                id: 30,
+                name: "Николай С.",
+                date: "10.08.2023",
+                rating: "★★★★★",
+                service: "Достижения",
+                content: "Заказал открытие всех достижений Battle Pass. Сделали в срок, даже сложные комбо достижения.",
+                response: "Battle Pass достижения требуют времени, но мы справились!"
+            },
+            {
+                id: 31,
+                name: "Пётр В.",
+                date: "05.08.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Буст в иммортале - это искусство. Сделали аккуратно, без проигрышей. Очень профессионально.",
+                response: "Иммортал дивизион требует максимальной концентрации. Спасибо за высокую оценку!"
+            },
+            {
+                id: 32,
+                name: "Руслан К.",
+                date: "01.08.2023",
+                rating: "★★★★★",
+                service: "Коучинг",
+                content: "Тренер помог с импровизацией в игре. Теперь могу адаптироваться к любой ситуации. MMR +700 за 2 недели.",
+                response: "Импровизация - признак высокого мастерства. Отлично!"
+            },
+            {
+                id: 33,
+                name: "Святослав М.",
+                date: "28.07.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Парный буст с 2500 до 3500. Играли с бустером как полноценная команда. Опыт бесценный.",
+                response: "Командная игра - это всегда эффективнее. Рады, что помогли!"
+            },
+            {
+                id: 34,
+                name: "Тарас Г.",
+                date: "25.07.2023",
+                service: "Аккаунты",
+                rating: "★★★★★",
+                content: "Приобрёл аккаунт с редкими предметами. Всё легально, аккаунт с историей. Доволен на 100%.",
+                response: "Редкие предметы - это всегда ценно. Рады, что аккаунт нашёл своего владельца."
+            },
+            {
+                id: 35,
+                name: "Устин Л.",
+                date: "20.07.2023",
+                rating: "★★★★★",
+                service: "Повышение порядочности",
+                content: "После бана в чате не мог общаться. Восстановили возможность писать сообщения. Теперь снова в строю.",
+                response: "Коммуникация важна в Dota. Рады, что вернули вам эту возможность."
+            },
+            {
+                id: 36,
+                name: "Филипп П.",
+                date: "15.07.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Срочный буст на 800 MMR за выходные. Сделали точно в срок, хотя сроки были жёсткие.",
+                response: "Срочные заказы - наша специализация. Спасибо за доверие!"
+            },
+            {
+                id: 37,
+                name: "Харитон С.",
+                date: "10.07.2023",
+                rating: "★★★★★",
+                service: "Калибровка",
+                content: "Новый стим аккаунт, калибровка на максимум. Получил 4000 MMR. Отличный старт для нового акка.",
+                response: "4000 MMR - достойный результат для калибровки. Удачи в дальнейших играх!"
+            },
+            {
+                id: 38,
+                name: "Цезарь В.",
+                date: "05.07.2023",
+                rating: "★★★★★",
+                service: "Достижения",
+                content: "Хотел все достижения на Techies. Сделали, хотя это было непросто. Профессионалы своего дела.",
+                response: "Techies требует особого подхода. Рады, что справились с задачей!"
+            },
+            {
+                id: 39,
+                name: "Эдуард К.",
+                date: "01.07.2023",
+                rating: "★★★★★",
+                service: "Коучинг",
+                content: "Улучшил навыки игры на керри. Теперь лучше фармлю, правильнее вступаю в драки. MMR растёт.",
+                response: "Керри - сложная роль. Отличный прогресс!"
+            },
+            {
+                id: 40,
+                name: "Юрий М.",
+                date: "28.06.2023",
+                rating: "★★★★★",
+                service: "Буст MMR",
+                content: "Буст с 3000 до 4500. Длительный заказ, но ребята работали стабильно. Каждый день отчёт о прогрессе.",
+                response: "Система отчётности важна для долгих заказов. Спасибо за терпение и доверие!"
+            }
+        ];
+        
+        // ========== ПАГИНАЦИЯ ОТЗЫВОВ ==========
+        let currentPage = 1;
+        const reviewsPerPage = 6;
+        
+        function displayReviews(page = 1) {
+            const reviewsContainer = document.getElementById('reviewsContainer');
+            const paginationContainer = document.getElementById('pagination');
+            
+            // Очищаем контейнеры
+            reviewsContainer.innerHTML = '';
+            paginationContainer.innerHTML = '';
+            
+            // Рассчитываем индексы для текущей страницы
+            const startIndex = (page - 1) * reviewsPerPage;
+            const endIndex = startIndex + reviewsPerPage;
+            const pageReviews = reviews.slice(startIndex, endIndex);
+            
+            // Отображаем отзывы текущей страницы
+            pageReviews.forEach(review => {
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'review-card';
+                reviewCard.innerHTML = `
+                    <div class="review-header">
+                        <div class="review-avatar">${review.name.charAt(0)}</div>
+                        <div class="review-info">
+                            <div class="review-name">${review.name}</div>
+                            <div class="review-date">${review.date}</div>
+                        </div>
+                        <div class="review-rating">${review.rating}</div>
+                    </div>
+                    <div class="review-content">${review.content}</div>
+                    <div class="review-service">${review.service}</div>
+                    <div class="review-divider"></div>
+                    <div class="review-response">
+                        <span class="response-label">Ответ MagiskBOOST:</span>
+                        <div class="response-text">${review.response}</div>
+                    </div>
+                `;
+                reviewsContainer.appendChild(reviewCard);
+            });
+            
+            // Рассчитываем количество страниц
+            const totalPages = Math.ceil(reviews.length / reviewsPerPage);
+            
+            // Создаем кнопки пагинации
+            if (totalPages > 1) {
+                // Кнопка "Назад"
+                const prevButton = document.createElement('div');
+                prevButton.className = `page-btn ${page === 1 ? 'disabled' : ''}`;
+                prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevButton.onclick = () => {
+                    if (page > 1) displayReviews(page - 1);
+                };
+                paginationContainer.appendChild(prevButton);
+                
+                // Номера страниц
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageButton = document.createElement('div');
+                    pageButton.className = `page-btn ${i === page ? 'active' : ''}`;
+                    pageButton.textContent = i;
+                    pageButton.onclick = () => displayReviews(i);
+                    paginationContainer.appendChild(pageButton);
+                }
+                
+                // Кнопка "Вперед"
+                const nextButton = document.createElement('div');
+                nextButton.className = `page-btn ${page === totalPages ? 'disabled' : ''}`;
+                nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextButton.onclick = () => {
+                    if (page < totalPages) displayReviews(page + 1);
+                };
+                paginationContainer.appendChild(nextButton);
+            }
+            
+            currentPage = page;
+        }
+        
+        // ========== ОСНОВНЫЕ ФУНКЦИИ КАЛЬКУЛЯТОРА ==========
+        
+        // Инициализация калькулятора
+        function initCalculator() {
+            updateServiceTypeDisplay();
+            updateAmountDisplay();
+            updateDivisionDisplay();
+            updateUrgencyDisplay();
+            calculateAndUpdatePrice();
+            
+            // Назначаем обработчики событий
+            setupEventListeners();
+        }
+        
+        // Настройка обработчиков событий
+        function setupEventListeners() {
+            // Ползунок количества
+            amountSlider.addEventListener('input', function() {
+                currentAmount = parseInt(this.value);
+                updateAmountDisplay();
+                calculateAndUpdatePrice();
+            });
+            
+            // Ползунок дивизиона
+            divisionSlider.addEventListener('input', function() {
+                currentDivision = parseInt(this.value);
+                updateDivisionDisplay();
+                calculateAndUpdatePrice();
+            });
+            
+            // Ползунок срочности
+            urgencySlider.addEventListener('input', function() {
+                currentUrgency = parseInt(this.value);
+                updateUrgencyDisplay();
+                calculateAndUpdatePrice();
+            });
+            
+            // Кнопки выбора типа услуги в калькуляторе
+            soloService.addEventListener('click', function() {
+                selectServiceType('solo');
+            });
+            
+            partyService.addEventListener('click', function() {
+                selectServiceType('party');
+            });
+            
+            behaviorService.addEventListener('click', function() {
+                selectServiceType('behavior');
+            });
+        }
+        
+        // Выбор типа услуги
+        function selectServiceType(type) {
+            currentServiceType = type;
+            const config = serviceConfigs[type];
+            
+            // Обновляем цену и единицы
+            currentPricePerUnit = config.price;
+            currentUnit = config.unit;
+            
+            // Обновляем активную кнопку
+            updateServiceTypeDisplay();
+            
+            // Обновляем настройки ползунка
+            updateSliderSettings(config);
+            
+            // Обновляем единицы измерения в интерфейсе
+            updateUnitLabels();
+            
+            // Обновляем отображение количества
+            updateAmountDisplay();
+            
+            // Пересчитываем цену
+            calculateAndUpdatePrice();
+            
+            // Прокручиваем к калькулятору
+            document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Обновление отображения активного типа услуги
+        function updateServiceTypeDisplay() {
+            // Убираем активный класс у всех
+            serviceTypes.forEach(type => {
+                type.classList.remove('active');
+            });
+            
+            // Добавляем активный класс к выбранному
+            if (currentServiceType === 'solo') {
+                soloService.classList.add('active');
+            } else if (currentServiceType === 'party') {
+                partyService.classList.add('active');
+            } else if (currentServiceType === 'behavior') {
+                behaviorService.classList.add('active');
+            }
+        }
+        
+        // Обновление настроек ползунка
+        function updateSliderSettings(config) {
+            amountSlider.min = config.min;
+            amountSlider.max = config.max;
+            amountSlider.step = config.step;
+            amountSlider.value = config.default;
+            currentAmount = config.default;
+            
+            // Обновляем подписи ползунка
+            const midValue = Math.round((config.max - config.min) / 2 + config.min);
+            minLabel.textContent = `${config.min} ${config.unit}`;
+            midLabel.textContent = `${midValue} ${config.unit}`;
+            maxLabel.textContent = `${config.max} ${config.unit}`;
+        }
+        
+        // Обновление единиц измерения в интерфейсе
+        function updateUnitLabels() {
+            const unitText = currentUnit === "очков" ? "ОЧКОВ" : currentUnit;
+            unitLabel.textContent = unitText;
+            unitValue.textContent = currentUnit;
+        }
+        
+        // Обновление отображения количества
+        function updateAmountDisplay() {
+            amountValue.innerHTML = `${currentAmount.toLocaleString('ru-RU')} <span id="unitValue">${currentUnit}</span>`;
+        }
+        
+        // Обновление отображения дивизиона
+        function updateDivisionDisplay() {
+            divisionDisplay.textContent = divisionNames[currentDivision];
+        }
+        
+        // Обновление отображения срочности
+        function updateUrgencyDisplay() {
+            urgencyDisplay.textContent = urgencyNames[currentUrgency];
+        }
+        
+        // Расчет и обновление цены
+        function calculateAndUpdatePrice() {
+            let basePrice;
+            
+            if (currentServiceType === 'behavior') {
+                // Для порядочности: цена за 100 очков
+                // 350₽ за 100 очков = (количество * 350) / 100
+                basePrice = (currentAmount * currentPricePerUnit) / 100;
+            } else {
+                // Для MMR: цена за 1 MMR
+                basePrice = currentAmount * currentPricePerUnit;
+            }
+            
+            // Наценка за дивизион
+            const divisionMultiplier = divisionMultipliers[currentDivision] / 100;
+            const divisionPrice = basePrice * divisionMultiplier;
+            
+            // Наценка за срочность
+            const urgencyMultiplier = urgencyMultipliers[currentUrgency] / 100;
+            const urgencyPrice = basePrice * urgencyMultiplier;
+            
+            // Скидка за объем
+            let discountPercent = 0;
+            for (const discount of volumeDiscounts) {
+                if (currentAmount >= discount.min) {
+                    discountPercent = discount.discount;
+                }
+            }
+            const discountPrice = basePrice * (discountPercent / 100);
+            
+            // Итоговая цена
+            const finalPrice = basePrice + divisionPrice + urgencyPrice - discountPrice;
+            
+            // Расчет времени выполнения
+            const timeEstimate = calculateTimeEstimate();
+            
+            // Обновление интерфейса
+            updatePriceDisplay(basePrice, divisionPrice, urgencyPrice, discountPrice, finalPrice, timeEstimate);
+        }
+        
+        // Расчет времени выполнения
+        function calculateTimeEstimate() {
+            let baseDays;
+            
+            if (currentServiceType === 'behavior') {
+                // Для порядочности: примерно 1 день на 500 очков
+                baseDays = currentAmount / 500;
+            } else {
+                // Для MMR: примерно 1 день на 500 MMR
+                baseDays = currentAmount / 500;
+            }
+            
+            // Увеличение времени для высоких дивизионов
+            const divisionTimeMultiplier = 1 + (currentDivision * 0.1);
+            baseDays *= divisionTimeMultiplier;
+            
+            // Корректировка в зависимости от срочности
+            if (currentUrgency === 3) { // Срочно
+                baseDays *= 0.5; // В 2 раза быстрее
+            } else if (currentUrgency === 1) { // Не срочно
+                baseDays *= 1.5; // На 50% дольше
+            }
+            
+            // Минимальное и максимальное время
+            const minDays = Math.max(1, Math.floor(baseDays * 0.7));
+            const maxDays = Math.max(2, Math.ceil(baseDays * 1.3));
+            
+            return `${minDays}-${maxDays} дней`;
+        }
+        
+        // Обновление отображения цен
+        function updatePriceDisplay(basePrice, divisionPrice, urgencyPrice, discountPrice, finalPrice, timeEstimate) {
+            // Форматирование чисел с пробелами тысяч
+            function formatPrice(price) {
+                return Math.round(price).toLocaleString('ru-RU') + ' ₽';
+            }
+            
+            // Обновляем элементы на странице
+            basePriceElement.textContent = formatPrice(basePrice);
+            
+            // Наценка за дивизион
+            if (divisionPrice > 0) {
+                divisionPriceElement.textContent = '+ ' + formatPrice(divisionPrice);
+                divisionPriceElement.style.color = '#ff4655';
+            } else {
+                divisionPriceElement.textContent = '0 ₽';
+                divisionPriceElement.style.color = 'var(--text)';
+            }
+            
+            // Наценка за срочность
+            if (urgencyPrice > 0) {
+                urgencyPriceElement.textContent = '+ ' + formatPrice(urgencyPrice);
+                urgencyPriceElement.style.color = '#ff4655';
+            } else if (urgencyPrice < 0) {
+                urgencyPriceElement.textContent = '- ' + formatPrice(Math.abs(urgencyPrice));
+                urgencyPriceElement.style.color = '#00d8ff';
+            } else {
+                urgencyPriceElement.textContent = '0 ₽';
+                urgencyPriceElement.style.color = 'var(--text)';
+            }
+            
+            // Скидка за объем
+            if (discountPrice > 0) {
+                discountPriceElement.textContent = '- ' + formatPrice(discountPrice);
+                discountPriceElement.style.color = '#00d8ff';
+            } else {
+                discountPriceElement.textContent = '0 ₽';
+                discountPriceElement.style.color = 'var(--text)';
+            }
+            
+            // Итоговая цена
+            const formattedFinalPrice = formatPrice(finalPrice);
+            finalPriceElement.textContent = formattedFinalPrice;
+            totalPriceElement.textContent = formattedFinalPrice;
+            
+            // Время выполнения
+            timeEstimateElement.textContent = timeEstimate;
+            
+            // Анимация изменения цены
+            totalPriceElement.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                totalPriceElement.style.transform = 'scale(1)';
+            }, 150);
+        }
+        
+        // ========== ПЛАВНАЯ ПРОКРУТКА ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // ========== ЗАПУСК ПРИ ЗАГРУЗКЕ СТРАНИЦЫ ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            initCalculator();
+            displayReviews(1);
+        });
+    </script>
+</body>
+</html>
